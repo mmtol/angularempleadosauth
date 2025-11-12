@@ -28,7 +28,7 @@ export default class ServiceEmp
         return promise;
     }
 
-    getPerfil(token:string):Promise<any>
+    getPerfil(token:any):Promise<any>
     {
         let url = environment.emp;
         let endPoint = "api/Empleados/PerfilEmpleado";
@@ -48,7 +48,7 @@ export default class ServiceEmp
         return promise;
     }
 
-    getSubs(token:string):Promise<any>
+    getSubs(token:any):Promise<any>
     {
         let url = environment.emp;
         let endPoint = "api/Empleados/Subordinados";
