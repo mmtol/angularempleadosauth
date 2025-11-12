@@ -1,6 +1,7 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { MenuComponent } from '../components/menu.component/menu.component';
 import { HomeComponent } from '../components/home.component/home.component';
 import { LoginComponent } from '../components/login.component/login.component';
 import { PerfilComponent } from '../components/perfil.component/perfil.component';
@@ -18,6 +19,7 @@ import { App } from './app';
   declarations: 
   [
     App,
+    MenuComponent,
     HomeComponent,
     LoginComponent,
     PerfilComponent,
