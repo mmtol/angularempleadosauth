@@ -20,7 +20,7 @@ const appRoutes:Routes=
         component:PerfilComponent
     },
     {
-        path:"Subs",
+        path:"subs",
         component:SubsComponent
     }
 ]
