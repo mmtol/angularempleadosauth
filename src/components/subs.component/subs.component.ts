@@ -16,17 +16,17 @@ export class SubsComponent implements OnInit
    public subs!:Array<Empleado>;
   
   constructor(private _service:ServiceEmp,
-              private _router:Router)
-  {
-    if (localStorage.getItem('token') == null)
-    {
-      this._router.navigate(["/login"]);
-    }
-  }
+              private _router:Router) {}
 
   ngOnInit(): void 
   {
-    this._service.getSubs(localStorage.getItem('token')).then(response =>
+    let token = localStorage.getItem('token');
+    if (!token)
+    {
+      this._router.navigate(["/login"]);
+    }
+
+    this._service.getSubs(token).then(response =>
     {
       this.subs = response;
     }) 

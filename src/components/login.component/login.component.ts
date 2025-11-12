@@ -36,6 +36,7 @@ export class LoginComponent
     this._service.iniciarSesion(this.user).then(response =>
     {
       localStorage.setItem('token', response.response);
+      localStorage.setItem('usuario', this.user.userName);
       this._router.navigate(["/"]);
     })
   }

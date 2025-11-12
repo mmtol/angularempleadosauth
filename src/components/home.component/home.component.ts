@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
 
-@Component({
+@Component
+({
   selector: 'app-home.component',
   standalone: false,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent 
+export class HomeComponent
 {
-  
+  public usuario:any;
+
+  constructor()
+  {
+    this.usuario = localStorage.getItem('usuario');
+  }
 }

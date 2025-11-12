@@ -16,17 +16,17 @@ export class PerfilComponent implements OnInit
   public perfil!:Empleado;
   
   constructor(private _service:ServiceEmp,
-              private _router:Router)
-  {
-    if (localStorage.getItem('token') == null)
-    {
-      this._router.navigate(["/login"]);
-    }
-  }
+              private _router:Router) {}
 
   ngOnInit(): void 
   {
-    this._service.getPerfil(localStorage.getItem('token')).then(response =>
+    let token = localStorage.getItem('token');
+    if (!token)
+    {
+      this._router.navigate(["/login"]);
+    }
+
+    this._service.getPerfil(token).then(response =>
     {
       this.perfil = response;
     }) 

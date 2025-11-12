@@ -1,3 +1,11 @@
-<h1>HOME</h1>
-<h2>Bienvenido y suerte</h2>
-<h3>Jiji</h3>
+@if(usuario)
+{
+    <h1>HOME</h1>
+    <h2>Bienvenido {{usuario}}</h2>
+}
+@else
+{
+    <h1>HOME</h1>
+    <h2>Bienvenido y suerte</h2>
+    <h3>Jiji</h3>
+}
