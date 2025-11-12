@@ -3,7 +3,6 @@ import Usuario from "../models/Usuario";
 import { environment } from "../environments/environment.development";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
-
 @Injectable()
 export default class ServiceEmp
 {
@@ -15,7 +14,6 @@ export default class ServiceEmp
         let endPoint = "Auth/Login";
 
         let data = JSON.stringify(user);
-        console.log(data);
         let header = new HttpHeaders();
         header = header.set("Content-type", "application/json");
 

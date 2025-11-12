@@ -23,23 +23,20 @@ export class LoginComponent
               private _router:Router)
   {
     this.cajaUsuario = new ElementRef("");
-    this.cajaPasswd = new ElementRef(0);
+    this.cajaPasswd = new ElementRef("");
   }
 
   iniciarSesion():void
   {
     let usuario = this.cajaUsuario.nativeElement.value;
-    let passwd = parseInt(this.cajaPasswd.nativeElement.value);
+    let passwd = this.cajaPasswd.nativeElement.value;
 
     this.user = new Usuario(usuario, passwd);
 
     this._service.iniciarSesion(this.user).then(response =>
     {
-      console.log(response);
-      if (response.token)
-      {
-        localStorage.setItem('token', response.token);
-      }
+      localStorage.setItem('token', response.response);
+      this._router.navigate(["/"]);
     })
   }
 }
